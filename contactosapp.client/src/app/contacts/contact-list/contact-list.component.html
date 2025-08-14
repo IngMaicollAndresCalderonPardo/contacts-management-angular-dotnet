@@ -1,0 +1,63 @@
+<div class="container mt-4">
+  <h2>Lista de contactos</h2>
+
+  <mat-form-field appearance="outline" style="width: 100%;">
+    <mat-label>Buscar por nombre</mat-label>
+    <input matInput [(ngModel)]="searchTerm" (keyup)="loadContacts()" />
+  </mat-form-field>
+
+  <table mat-table [dataSource]="contacts" class="mat-elevation-z8">
+
+    <!-- Nombre -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Nombre</th>
+      <td mat-cell *matCellDef="let contact">{{ contact.name }}</td>
+    </ng-container>
+
+    <!-- Email -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef>Email</th>
+      <td mat-cell *matCellDef="let contact">{{ contact.email }}</td>
+    </ng-container>
+
+    <!-- Teléfono -->
+    <ng-container matColumnDef="phone">
+      <th mat-header-cell *matHeaderCellDef>Teléfono</th>
+      <td mat-cell *matCellDef="let contact">{{ contact.phone }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="birthDate">
+      <th mat-header-cell *matHeaderCellDef>Fecha Cumpleaños</th>
+      <td mat-cell *matCellDef="let contact">{{ contact.birthDate | date:'dd/MM/yyyy'}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="createdAt">
+      <th mat-header-cell *matHeaderCellDef>Fecha de Creación</th>
+      <td mat-cell *matCellDef="let contact">{{ contact.createdAt | date:'short' }}</td>
+    </ng-container>
+
+
+    <!-- Acciones -->
+    <ng-container matColumnDef="acciones">
+      <th mat-header-cell *matHeaderCellDef>Acciones</th>
+      <td mat-cell *matCellDef="let contact">
+        <button mat-icon-button color="primary" (click)="openEditDialog(contact)">
+          <mat-icon>edit</mat-icon> <!-- Podrías agregar tooltip -->
+        </button>
+        <span style="margin-left: 8px;">Editar</span>
+
+        <button mat-icon-button color="warn" (click)="deleteContact(contact.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <span style="margin-left: 8px;">Eliminar</span>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="['name', 'email', 'phone', 'birthDate', 'createdAt', 'acciones']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['name', 'email', 'phone', 'birthDate', 'createdAt', 'acciones'];"></tr>
+  </table>
+
+  <div *ngIf="contacts.length === 0" class="alert alert-info">
+    No hay contactos.
+  </div>
+</div>

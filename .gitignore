@@ -1,0 +1,25 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+bin/
+obj/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Node.js
+node_modules/
+dist/
+
+# Logs
+*.log
+
+# Sistema operativo
+Thumbs.db
+ehthumbs.db
+Desktop.ini

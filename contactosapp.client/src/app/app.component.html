@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="#">Contact-App</a>
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/register" routerLinkActive="active">Register</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/contacts" routerLinkActive="active">Contacts</a>
+      </li>
+      <!-- Opción DELETE puede ser un botón o parte del listado -->
+    </ul>
+  </div>
+</nav>
+
+<div class="container mt-3">
+  <router-outlet></router-outlet>
+</div>

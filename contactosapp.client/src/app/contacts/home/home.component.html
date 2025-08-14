@@ -1,0 +1,35 @@
+<div class="container mt-5">
+
+  <mat-card class="welcome-card mat-elevation-z6" style="text-align: center; padding: 20px;">
+    <mat-card-title>
+      <h1>Bienvenido a <span style="color: #3f51b5;">Contact-App</span></h1>
+    </mat-card-title>
+
+    <mat-card-content>
+      <p>
+        Esta aplicación es un desafío técnico que implementa un <strong>backend en .NET Core</strong>
+        y un <strong>frontend en Angular</strong>. Permite gestionar contactos: crear nuevos, listar, buscar y eliminar.
+      </p>
+
+      <mat-divider></mat-divider>
+
+      <h3>Pestañas disponibles:</h3>
+      <ul>
+        <li><strong>Register:</strong> Formulario para agregar nuevos contactos con validaciones.</li>
+        <li><strong>Contacts:</strong> Lista de todos los contactos con opción para eliminar o editar.</li>
+      </ul>
+
+      <mat-divider></mat-divider>
+
+      <p style="margin-top: 10px;">
+        ¡Explora la aplicación y prueba sus funcionalidades!
+      </p>
+    </mat-card-content>
+
+    <mat-card-actions style="justify-content: center;">
+      <button mat-raised-button color="primary" routerLink="/contacts">Ver Contactos</button>
+      <button mat-stroked-button color="accent" routerLink="/register">Agregar Contacto</button>
+    </mat-card-actions>
+  </mat-card>
+
+</div>
